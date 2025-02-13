@@ -10,7 +10,9 @@ def y():
     return render_template("y.html")
 import openai
 # Set up your OpenAI API key
-openai.api_key = "MyAPIKEY"
+openai.api_key = os.getenv(OPENAI_SECRET_API)
+if not openai_api_key:
+    raise ValueError("No OpenAI API key found. Please set the OPENAI_API_KEY environment variable.")
 import googletrans
 from googletrans import Translator
 @app.route("/chatgpt",methods=["POST","GET"])
