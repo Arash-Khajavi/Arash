@@ -4,7 +4,10 @@ import googletrans
 from googletrans import Translator
 import openai
 from flask import Flask,redirect,render_template,request,url_for,send_file,Response
-import cgi
+try:
+ import cgi
+except:
+    pass
 app=Flask(__name__)
 @app.route("/y")
 def y():
