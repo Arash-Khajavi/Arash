@@ -8,13 +8,14 @@ try:
  import cgi
 except:
     pass
+ import os
 app=Flask(__name__)
 @app.route("/y")
 def y():
     return render_template("y.html")
 # import openai
 # Set up your OpenAI API key
-openai.api_key = OPENAI
+openai.api_key = os.getenev(new12)
 # import googletrans
 # from googletrans import Translator
 @app.route("/chatgpt",methods=["POST","GET"])
