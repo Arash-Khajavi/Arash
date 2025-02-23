@@ -3,6 +3,7 @@ from email.message import EmailMessage
 # import cv2
 # import numpy
 # import time
+import cgi
 import googletrans
 from googletrans import Translator
 import openai
