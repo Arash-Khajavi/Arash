@@ -1,8 +1,5 @@
 import smtplib
 from email.message import EmailMessage
-# import cv2
-# import numpy
-# import time
 import googletrans
 from googletrans import Translator
 import openai
