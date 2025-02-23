@@ -8,7 +8,7 @@ try:
  import cgi
 except:
     pass
- import os
+import os
 app=Flask(__name__)
 @app.route("/y")
 def y():
