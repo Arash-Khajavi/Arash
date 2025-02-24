@@ -115,4 +115,4 @@ def chat_with_gpt( model="gpt-4o-mini", temperature=0.7, max_tokens=900):
     #         "<input type=submit value=Submit>"
     #         "</form>")
 if __name__ == "__main__":
-    app2.run(debug=True)
+    app2.run(host="0.0.0.0", port=8080)
