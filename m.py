@@ -9,8 +9,8 @@ try:
 except:
     pass
 import os
-app=Flask(__name__)
-@app.route("/y")
+app2=Flask(__name__)
+@app2.route("/y")
 def y():
     return render_template("y.html")
 # import openai
@@ -18,7 +18,7 @@ def y():
 openai.api_key = os.getenv("NEW12")
 # import googletrans
 # from googletrans import Translator
-@app.route("/chatgpt",methods=["POST","GET"])
+@app2.route("/chatgpt",methods=["POST","GET"])
 def chat_with_gpt( model="gpt-4o-mini", temperature=0.7, max_tokens=900):
     max_retries = 5
     base_wait_time = 2
