@@ -61,11 +61,11 @@ def chat_with_gpt( model="gpt-4o-mini", temperature=0.7, max_tokens=900):
                     for u in response2.json()["data"]:
                       for r in u:
                           if response2.json()["data"][i]["id"] in user and "price" in user:
-                              return f"{render_template("y.html")},{response2.json()["data"][i]["priceUsd"]}"
+                              return f"{render_template('y.html')},{response2.json()['data'][i]['priceUsd']}"
                           if response2.json()["data"][i]["id"] in user and r in user:
                               response23 = response2.json()["data"][i][r]
                               print(response23)
-                              return f"{render_template("y.html")},{response23}"
+                              return f"{render_template('y.html')},{response23}"
                           if  "founder".lower() in user or "founder".upper() in user:
                                 return "Arash Khajavi was the one who created and modified me in order to stand out"
                                        # f"{translator.detect(text1)}"
@@ -78,7 +78,7 @@ def chat_with_gpt( model="gpt-4o-mini", temperature=0.7, max_tokens=900):
                  for t, y in googletrans.LANGUAGES.items():
                      if language == y:
                          p.append(t)
-                         re=f"{render_template("y.html")},{translator.translate(response['choices'][0]['message']['content'].strip(), src=str(pri), dest=str(t))}"
+                         re=f"{render_template('y.html')},{translator.translate(response['choices'][0]['message']['content'].strip(), src=str(pri), dest=str(t))}"
                          # pr1 = f"{translator.translate("what's the meaning of the word 'dick' in persian? ", src=str(pri), dest=str(t))}"
                          # return f"{re}"
                          pr = re.replace("Translated", "")
