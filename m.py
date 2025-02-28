@@ -1,4 +1,5 @@
 import smtplib
+import os
 from email.message import EmailMessage
 import googletrans
 from googletrans import Translator
@@ -115,4 +116,7 @@ def chat_with_gpt( model="gpt-4o-mini", temperature=0.7, max_tokens=900):
     #         "<input type=submit value=Submit>"
     #         "</form>")
 if __name__ == "__main__":
-    app2.run(host="0.0.0.0", port=8080)
+  port = int(os.environ.get("PORT", 8080))  # Use the PORT from Render, default to 8080
+  app.run(host="0.0.0.0", port=port)
+
+  
