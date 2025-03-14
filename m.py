@@ -51,39 +51,39 @@ def chat_with_gpt( model="gpt-4o-mini", temperature=0.7, max_tokens=900):
         #     print(translator.detect(text1))
         # except:
         #     pass
-        while True:
-             language = request.form.get("language of response")
-             user = request.form.get("user")
-             translator = Translator()
-             pr = f"{translator.detect(user)}"
-             pri = f"{pr}".split('=')[1][0:2]
-             if language in googletrans.LANGUAGES.values():
-                 for i in range(100):
-                    for u in response2.json()["data"]:
-                      for r in u:
-                          if response2.json()["data"][i]["id"] in user and "price" in user:
-                              return f"{render_template('y.html')},{response2.json()['data'][i]['priceUsd']}"
-                          if response2.json()["data"][i]["id"] in user and r in user:
-                              response23 = response2.json()["data"][i][r]
-                              print(response23)
-                              return f"{render_template('y.html')},{response23}"
-                          if  "founder".lower() in user or "founder".upper() in user:
-                                return "Arash Khajavi was the one who created and modified me in order to stand out"
-                                       # f"{translator.detect(text1)}"
-                      # return f"{translator.detect(text1)}"
-                 # import googletrans
-                 # from googletrans import Translator
-                 # p=response['choices'][0]['message']['content'].strip()
-                 p = []
-                 o = []
-                 for t, y in googletrans.LANGUAGES.items():
-                     if language == y:
-                         p.append(t)
-                         re=f"{render_template('y.html')},{translator.translate(response['choices'][0]['message']['content'].strip(), src=str(pri), dest=str(t))}"
-                         # pr1 = f"{translator.translate("what's the meaning of the word 'dick' in persian? ", src=str(pri), dest=str(t))}"
-                         # return f"{re}"
-                         pr = re.replace("Translated", "")
-                         return pr
+        # while True:
+        language = request.form.get("language of response")
+        user = request.form.get("user")
+        translator = Translator()
+        pr = f"{translator.detect(user)}"
+        pri = f"{pr}".split('=')[1][0:2]
+        if language in googletrans.LANGUAGES.values():
+            for i in range(100):
+               for u in response2.json()["data"]:
+                 for r in u:
+                     if response2.json()["data"][i]["id"] in user and "price" in user:
+                         return f"{render_template('y.html')},{response2.json()['data'][i]['priceUsd']}"
+                     if response2.json()["data"][i]["id"] in user and r in user:
+                         response23 = response2.json()["data"][i][r]
+                         print(response23)
+                         return f"{render_template('y.html')},{response23}"
+                     if  "founder".lower() in user or "founder".upper() in user:
+                           return "Arash Khajavi was the one who created and modified me in order to stand out"
+                                  # f"{translator.detect(text1)}"
+                 # return f"{translator.detect(text1)}"
+            # import googletrans
+            # from googletrans import Translator
+            # p=response['choices'][0]['message']['content'].strip()
+            p = []
+            o = []
+            for t, y in googletrans.LANGUAGES.items():
+                if language == y:
+                    p.append(t)
+                    re=f"{render_template('y.html')},{translator.translate(response['choices'][0]['message']['content'].strip(), src=str(pri), dest=str(t))}"
+                    # pr1 = f"{translator.translate("what's the meaning of the word 'dick' in persian? ", src=str(pri), dest=str(t))}"
+                    # return f"{re}"
+                    pr = re.replace("Translated", "")
+                    return pr
                          #  index=pr.index("text")
                          # o.append(" ".join(pr))
                          # for y1 in o:
