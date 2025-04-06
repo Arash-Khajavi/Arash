@@ -2,7 +2,7 @@ from flask import Flask, request, abort
 import requests
 import os
 app = Flask(__name__)
-o=os.getenv("ip")
+o=os.getenv("IP")
 API_KEY = o
 BLOCKED_COUNTRY = "Iran"  # Replace with the country you want to block
 
